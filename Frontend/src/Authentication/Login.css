@@ -1,0 +1,114 @@
+body {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin: 0;
+  padding: 0;
+  color: white;
+  font-family: sans-serif;
+  position: relative;
+}
+
+.message-box {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #fff;
+  padding: 12px 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  z-index: 1000;
+}
+
+
+.whole-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* Glassmorphic login box - centered */
+.loginDiv {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /*  Center the div */
+  height: 300px;
+  width: 300px;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.1); /* Light transparent white */
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  padding: 20px;
+  color: #fff;
+}
+
+/* Blurred input fields */
+.input-fields {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 6px;
+  padding: 10px;
+  color: white;
+  outline: none;
+  width: 93%;
+  margin-bottom: 10px
+}
+
+.input-fields::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.input-group {
+  margin-bottom: 15px;
+}
+
+.input-group label {
+  display: block;
+  margin-bottom: 6px;
+  color: #fff;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+
+.loginBtn{
+  height: 40px;
+  width: 100px;
+  background-color: #007bff; /* Bootstrap primary */
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  margin-top: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.loginBtn:hover {
+  background-color: #0056b3; /* darker blue on hover */
+  transform: scale(1.05);
+}
+
+@media (max-width: 480px) {
+  .loginDiv {
+    box-sizing: border-box;
+    width: 88vw;
+    max-width: 300px;
+    height: auto;
+  }
+
+  .input-fields {
+    box-sizing: border-box;
+    width: 100%;
+  }
+}

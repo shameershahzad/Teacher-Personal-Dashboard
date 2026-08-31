@@ -1,0 +1,170 @@
+.message-Popup {
+  position: fixed;          /* stay on screen, not affect layout */
+  top: 20px;                /* distance from top */
+  left: 50%;                /* center horizontally */
+  transform: translateX(-50%);
+  background: #ffffff;      /* white background */
+  color: inherit;           /* text color comes from inline style */
+  padding: 12px 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  font-weight: bold;
+  z-index: 1000;      
+  font-size: 18px;      /* stays above navbar/table */
+  animation: fadeInOut 3s ease forwards;
+}
+
+.drop_down {
+  width: 13%;
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: none;
+  font-size: 14px;
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  backdrop-filter: blur(5px);
+  outline: none;
+  /* appearance: none; */
+  cursor: pointer;
+}
+
+.drop_down:focus {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.drop_down option {
+  color: black; /* Required: dropdown options are not visible in some browsers otherwise */
+}
+
+.Table_Container {
+  margin: 40px auto;
+  max-width: 90%;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  border-radius: 15px;
+  padding: 0;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  overflow-x: auto;    /* horizontal scroll instead of crushing columns */
+  max-height: 400px;   /* Adjust as needed */
+  overflow-y: auto;    /* Vertical scroll */
+}
+
+/* Table base - nowrap keeps each column at its natural width so extra
+   columns make the table wider than the container (triggering the
+   container's scrollbar) instead of every column getting crushed. */
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  color: white;
+  border-spacing: 0;
+}
+
+.table th,
+.table td {
+  white-space: nowrap;
+}
+
+/* Table headings */
+.table th {
+  position: sticky;
+  top: 0;
+  background-color: rgba(255, 255, 255, 0.25); 
+  backdrop-filter: blur(8px);
+  z-index: 2;
+  border-bottom: none;
+}
+
+/* Table body rows */
+.table td {
+  padding: 14px 18px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.table tbody tr:hover {
+  background-color: rgba(255, 255, 255, 0.25);
+  /* transform: scale(1.01); */
+  cursor: pointer;
+}
+
+/* Action buttons inside table */
+.table td button {
+  margin-right: 8px;
+  background-color: white;
+  color: #2575fc;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.2s ease;
+}
+
+.table td button:hover {
+  background-color: #f0f0f0;
+  color: #6a11cb;
+}
+
+
+/* Base button style */
+#edit-btn {
+  padding: 6px 14px;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-right: 8px;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Edit button */
+#edit-btn {
+  background-color: #ffffff;
+  color: #2575fc;
+}
+
+#edit-btn:hover {
+  background-color: #e0e0ff;
+  color: #6a11cb;
+}
+
+.Input_Field{
+ padding: 10px 14px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  font-size: 14px;
+  margin-top:20px;
+  margin-left: 40%;
+  width:150px;
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  transition: background 0.3s ease;
+}
+
+.Input_Field::placeholder{
+  color: #e0e0e0;
+}
+
+.Input_Field:focus{
+  background: rgba(255, 255, 255, 0.3);
+
+}
+
+@media (max-width: 768px) {
+  /* !important needed - these selects/input carry inline marginLeft
+     (e.g. style={{marginLeft:"30%"}}) that would otherwise win. */
+  .drop_down,
+  .Input_Field {
+    box-sizing: border-box !important;
+    display: block !important;
+    width: 90% !important;
+    margin: 10px auto !important;
+  }
+
+  .Table_Container {
+    max-width: 95%;
+    padding: 0;
+  }
+}

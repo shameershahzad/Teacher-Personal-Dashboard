@@ -1,0 +1,131 @@
+.message-popup {
+  position: fixed;          /* stay on screen, not affect layout */
+  top: 20px;                /* distance from top */
+  left: 50%;                /* center horizontally */
+  transform: translateX(-50%);
+  background: #ffffff;      /* white background */
+  color: inherit;           /* text color comes from inline style */
+  padding: 12px 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  font-weight: bold;
+  z-index: 1000;      
+  font-size: 18px;      /* stays above navbar/table */
+  animation: fadeInOut 3s ease forwards;
+}
+
+
+.Dropdown {
+  width: 15%;
+  padding: 10px 12px;
+  border-radius: 10px;
+  margin-top: 20px;
+  margin-left: 30%;
+  border: none;
+  font-size: 14px;
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  backdrop-filter: blur(5px);
+  outline: none;
+  appearance: none;
+  cursor: pointer;
+}
+
+.Dropdown:focus {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.Dropdown option {
+  color: black; /* Required: dropdown options are not visible in some browsers otherwise */
+}
+
+
+.TableContainer {
+  margin: 40px auto;
+  max-width: 90%;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  border-radius: 15px;
+  padding: 0;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  overflow-x: auto;
+}
+
+/* Table base */
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  color: white;
+}
+
+/* Keeps each column at its natural width so extra columns make the
+   table wider than the container (triggering its scrollbar) instead
+   of every column getting crushed to fit. */
+.table th,
+.table td {
+  white-space: nowrap;
+}
+
+/* Table headings */
+.table th {
+  padding: 14px 18px;
+  text-align: left;
+  background-color: rgba(255, 255, 255, 0.25); /* Higher contrast */
+  font-weight: bold;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Table body rows */
+.table td {
+  padding: 14px 18px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+
+
+.table tbody tr:hover {
+  background-color: rgba(255, 255, 255, 0.25);
+  border-left: 4px solid #ffffff;
+  transform: scale(1.01);
+  cursor: pointer;
+}
+
+
+/* Action buttons inside table */
+.table td button {
+  margin-right: 8px;
+  background-color: white;
+  color: #2575fc;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.2s ease;
+}
+
+.table td button:hover {
+  background-color: #f0f0f0;
+  color: #6a11cb;
+}
+
+@media (max-width: 768px) {
+  /* !important needed - these selects carry inline marginLeft
+     (e.g. style={{marginLeft:"32%"}}) that would otherwise win. */
+  .Dropdown {
+    box-sizing: border-box !important;
+    display: block !important;
+    width: 90% !important;
+    margin: 10px auto !important;
+  }
+
+  .TableContainer {
+    max-width: 95%;
+    padding: 0;
+  }
+}
+

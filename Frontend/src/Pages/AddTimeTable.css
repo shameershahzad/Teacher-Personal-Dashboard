@@ -1,0 +1,114 @@
+.message-box {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #fff;
+  padding: 12px 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  z-index: 1000;
+}
+
+
+.add-time-card {
+  max-width: 500px;
+  padding: 30px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  margin-top: 80px;
+  margin-left: 31%;
+}
+
+.add-time-card h1 {
+  text-align: center;
+  margin-bottom: 10px;
+  font-size: 22px;
+  margin-top: -10px;
+  color: #ffffff;
+}
+
+.add-time-card form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.add-time-card input {
+  padding: 10px 14px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  font-size: 14px;
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  transition: background 0.3s ease;
+}
+
+.add-time-card input::placeholder {
+  color: #e0e0e0;
+}
+
+.add-time-card input:focus {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+
+.Drop-down {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 10px;
+  margin-top: 20px;
+  border: none;
+  font-size: 14px;
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  backdrop-filter: blur(5px);
+  outline: none;
+  appearance: none;
+  cursor: pointer;
+}
+
+.Drop-down:focus {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.Drop-down option {
+  color: black; /* Required: dropdown options are not visible in some browsers otherwise */
+}
+
+.addBtn {
+  padding: 10px 16px;
+  font-weight: bold;
+  background: linear-gradient(to right, #5f0ac7, #1f63e2); /* deep blend */
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.addBtn:hover {
+  background: linear-gradient(to right, #4c079d, #1242ab); /* darker hover */
+  transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+  /* margin-left:31% only "centers" this on wide screens - on narrow
+     ones it pushes the card mostly or fully off-screen. */
+  .add-time-card {
+    box-sizing: border-box;
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+    max-width: 500px;
+  }
+}

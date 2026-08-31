@@ -1,0 +1,199 @@
+.message-popup {
+  position: fixed;          /* stay on screen, not affect layout */
+  top: 20px;                /* distance from top */
+  left: 50%;                /* center horizontally */
+  transform: translateX(-50%);
+  background: #ffffff;      /* white background */
+  color: inherit;           /* text color comes from inline style */
+  padding: 12px 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  font-weight: bold;
+  z-index: 1000;      
+  font-size: 18px;      /* stays above navbar/table */
+  animation: fadeInOut 3s ease forwards;
+}
+
+.Drop_Down {
+  width: 13%;
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: none;
+  font-size: 14px;
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  backdrop-filter: blur(5px);
+  outline: none;
+  /* appearance: none; */
+  cursor: pointer;
+}
+
+.Drop_Down:focus {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.Drop_Down option {
+  color: black; /* Required: dropdown options are not visible in some browsers otherwise */
+}
+
+
+.tableContainer {
+  margin: 40px auto;
+  max-width: 90%;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  border-radius: 15px;
+  padding: 0;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  max-height: 400px;       /* set table height */
+  overflow-y: auto;        /* vertical scroll */
+  overflow-x: auto;        /* horizontal scroll instead of crushing columns */
+}
+
+/* Table base - nowrap keeps each column at its natural width so extra
+   columns make the table wider than the container (triggering the
+   container's scrollbar) instead of every column getting crushed. */
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  color: white;
+
+}
+
+.table th,
+.table td {
+  white-space: nowrap;
+}
+
+/* Table headings */
+.table th {
+  position: sticky;
+  top: 0;
+  background: linear-gradient( #4c0fa8, #1d5ed8); /* darker contrast */
+  color: #ffffff;
+  z-index: 5;
+  padding: 14px 18px;
+  font-weight: 600;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3); /* separates header from rows */
+}
+
+/* Table body rows */
+.table td {
+  padding: 14px 18px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.table tbody tr:hover {
+  background-color: rgba(255, 255, 255, 0.25);
+  border-left: 4px solid #ffffff;  /* from first snippet */
+  transform: scale(1.01);          /* subtle scale on hover */
+  cursor: pointer;
+
+}
+
+
+/* Action buttons inside table */
+.table td button {
+  margin-right: 8px;
+  background-color: white;
+  color: #2575fc;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.2s ease;
+}
+
+.table td button:hover {
+  background-color: #f0f0f0;
+  color: #6a11cb;
+}
+
+
+/* Base button style */
+#edit-btn {
+  padding: 6px 14px;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-right: 8px;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Edit button */
+#edit-btn {
+  background-color: #ffffff;
+  color: #2575fc;
+}
+
+#edit-btn:hover {
+  background-color: #e0e0ff;
+  color: #6a11cb;
+}
+
+
+
+
+.input_field{
+     padding: 10px 14px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  font-size: 14px;
+  margin-top:20px;
+  margin-left: 40%;
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  transition: background 0.3s ease;
+}
+
+.input_field::placeholder{
+  color: #e0e0e0;
+}
+
+.input_field:focus{
+  background: rgba(255, 255, 255, 0.3);
+
+}
+
+.saveBtn {
+  background-color: #ffffff;
+  color: #2575fc;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 10px;
+  margin-top: 10px;
+  margin-left: 44%;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+.saveBtn:hover {
+  background-color: #2575fc;
+  color: #ffffff;
+}
+
+@media (max-width: 768px) {
+  /* !important needed - these selects/input/button carry inline
+     marginLeft (e.g. style={{marginLeft:"32%"}}) that would otherwise win. */
+  .Drop_Down,
+  .input_field,
+  .saveBtn {
+    box-sizing: border-box !important;
+    display: block !important;
+    width: 90% !important;
+    margin: 10px auto !important;
+  }
+
+  .tableContainer {
+    max-width: 95%;
+    padding: 0;
+  }
+}

@@ -1,0 +1,58 @@
+.center-add-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+/* Add Class button style */
+.add-class-button {
+  background-color: #ffffff;
+  color: #2575fc;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 10px;
+  margin-top: 10px;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+.add-class-button:hover {
+  background-color: #2575fc;
+  color: #ffffff;
+}
+
+
+.addStudentsBtn {
+  background-color: #ffffff;
+  color: #2575fc;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 10px;
+  margin-top: 10px;
+  margin-left: 17%;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+.addStudentsBtn:hover {
+  background-color: #2575fc;
+  color: #ffffff;
+}
+
+@media (max-width: 768px) {
+  .center-add-wrapper {
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 0 12px;
+  }
+
+  .addStudentsBtn {
+    margin-left: 0;
+  }
+}
