@@ -3,8 +3,8 @@ import { TypeAnimation } from 'react-type-animation';
 const AutoMessage = () => {
   return (
     <div
-      style={{color: 'white',height: '100vh', width: '100vw',display: 'flex',justifyContent: 'center',
-        alignItems: 'center',textAlign: 'center', marginTop:"-95px"}}>
+      style={{color: 'white',display: 'flex',justifyContent: 'center',
+        alignItems: 'center',textAlign: 'center', padding: '140px 0'}}>
       <TypeAnimation
         sequence={[
           'Manage Classes, Sections, and Students 📋',
