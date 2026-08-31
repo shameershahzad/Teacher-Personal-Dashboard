@@ -24,6 +24,11 @@ function Login() {
 const handleSubmit = (e) => {
   e.preventDefault()
 
+  if(!email.trim() || !password.trim()){
+    setMessage("Please enter both email and password")
+    return
+  }
+
   axios.post(`${API_URL}/register/`,{email,password})
   .then(result => {
  
