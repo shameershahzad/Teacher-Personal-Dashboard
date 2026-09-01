@@ -11,12 +11,12 @@ router.post("/", async (req, res) => {
     const user = await registerModel.findOne({email});
 
     if (!user) {
-      return res.status(404).json({ message: "No user found" });
+      return res.status(401).json({ message: "No user found" });
     }
 
     const isMatch = await bcrypt.compare(password, user.password);
     if (!isMatch) {
-      return res.status(404).json({ message: "Incorrect password" });
+      return res.status(401).json({ message: "Incorrect password" });
     }
 
 const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET, { expiresIn: "1h" });
