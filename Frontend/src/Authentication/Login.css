@@ -29,15 +29,12 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  min-height: 100vh;
 }
 
 /* Glassmorphic login box - centered */
 .loginDiv {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%); /*  Center the div */
+  position: relative;
   height: 300px;
   width: 300px;
   border: 2px solid rgba(255, 255, 255, 0.2);
