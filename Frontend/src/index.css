@@ -1,4 +1,14 @@
 html, body {
-  overscroll-behavior-y: none;
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+  overscroll-behavior: none;
   touch-action: pan-y;
+}
+
+#root {
+  height: 100%;
+  overflow-y: auto;
+  overscroll-behavior: none;
+  -webkit-overflow-scrolling: touch;
 }
